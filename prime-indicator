@@ -88,10 +88,10 @@ class PRIMEIndicator:
 
     def checkIntegrated(self):
 	stat, out = commands.getstatusoutput("/usr/bin/prime-select query")
-	if "intel" in out:
-	    return True
-	else:
+	if "nvidia" in out:
 	    return False
+	else:
+	    return True
 
     def rendererString(self):
 	stat, out = commands.getstatusoutput('glxinfo | grep "OpenGL renderer string"')
